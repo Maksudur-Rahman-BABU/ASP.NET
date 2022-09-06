@@ -1,0 +1,46 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site.master.cs" Inherits="CollegeManegmentSystem.Site" %>
+
+<%@ Register Src="~/MyUserControl.ascx" TagPrefix="uc1" TagName="MyUserControl" %>
+
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+   <meta charset="utf-8" />
+    <meta name="viewport" content="Width=width-device" />
+    <title><%# Page.Title %></title>
+    <link href="Content/bootstrap.css" rel="stylesheet" />
+    <script src="Scripts/jquery-3.6.0.js"></script>
+    <link href="Content/font-awesome.css" rel="stylesheet" />
+    <script src="Scripts/bootstrap-datepicker.js"></script>
+
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+    <style>
+        body{
+            padding-top:70px;
+        }
+    </style>
+</head>
+<body>
+
+     <form id="form1" runat="server">
+     <asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>
+ <uc1:MyUserControl runat="server" id="MyUserControl" />
+
+        <div class="container-fluid">
+            <asp:ContentPlaceHolder ID="body" runat="server">
+            </asp:ContentPlaceHolder>
+        </div>
+        <footer class="container-fluid">
+            <p class="text-center">&copy; <%:DateTime.Now.Year %> - www.isdb-bisew.org</p>
+        </footer>
+    </form>
+    <asp:ContentPlaceHolder ID="foot" runat="server">
+
+    </asp:ContentPlaceHolder>
+    <script src="Scripts/bootstrap.js"></script>
+
+</body>
+</html>
